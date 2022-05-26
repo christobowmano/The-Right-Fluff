@@ -1,0 +1,75 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.home .carousel {
+    margin: auto;
+    width: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: 50px 0;
+}
+
+.home .carousel-track {
+    display: flex;
+    width: calc(625px * 12);
+    animation: scroll 40s linear infinite;
+    overflow: hidden;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-625px * 6));
+    }
+}
+
+.home .slide {
+    height: 420px;
+    width: 625px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home .carousel::before,
+.carousel::after {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+.home .carousel::before {
+    left: 0;
+    top: 0;
+}
+
+.home .carousel::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.home .carousel img {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.wrap {
+    display: block;
+    width: 80%;
+    margin: auto;
+}

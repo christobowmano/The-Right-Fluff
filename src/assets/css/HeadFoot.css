@@ -1,0 +1,77 @@
+@font-face {
+    font-family: future;
+    src: url('../font/FuturaLT-Bold.ttf');
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: deepskyblue;
+    height: 183px;
+}
+
+header .content {
+    display: flex;
+    width: 65%;
+    height: inherit;
+    margin: auto;
+}
+
+header .logo {
+    display: block;
+    text-align: center;
+}
+
+header .logo img {
+    width: 157px;
+    margin: 15px;
+}
+
+header .links {
+    display: flex;
+    margin: auto;
+    margin-right: 0;
+}
+
+header .links nav {
+    display: flex;
+}
+
+header .links nav li {
+    list-style: none;
+    margin: 0px 20px;
+    color: white;
+    font-size: 30px;
+}
+
+header .links nav li a {
+    color: white;
+    text-decoration: none;
+    font-family: future;
+}
+
+header .links nav li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer hr {
+    width: 70%;
+    border: 1px solid skyblue;
+}
+
+footer img {
+    width: 16%;
+}
+
+footer .background {
+    background-color: deepskyblue;
+    background-image: url('../img/preview.jpg');
+    background-size: cover;
+    background-position-y: 2090px;
+}
