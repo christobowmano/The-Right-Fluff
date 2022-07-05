@@ -4,12 +4,15 @@
     grid-template-rows: minmax(100px, auto);
     place-items: center;
     margin-bottom: 20px;
+    border: 3px dashed;
 }
 
 section {
     display: flex;
     width: 50%;
-    padding-bottom: 50px;
+    padding: 50px;
+    border: 3px dotted purple;
+    margin: 20px;
 }
 
 .img-wrap {
@@ -61,5 +64,6 @@ section {
     section {
         width: 100%;
         padding: 40px;
+        border: none;
     }
 }

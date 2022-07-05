@@ -58,6 +58,11 @@ header .links nav li a:hover {
 footer {
     display: flex;
     flex-direction: column;
+    background-image: url('../img/preview.jpg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    width: 100%;
+    background-position: 50% bottom;
 }
 
 footer hr {
@@ -70,8 +75,4 @@ footer img {
 }
 
 footer .background {
-    background-color: deepskyblue;
-    background-image: url('../img/preview.jpg');
-    background-size: cover;
-    background-position-y: 2090px;
 }
