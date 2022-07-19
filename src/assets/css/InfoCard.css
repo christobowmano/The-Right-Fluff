@@ -1,15 +1,23 @@
 .infocards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(100px, auto);
     place-items: center;
     margin-bottom: 20px;
     border: 3px dashed;
 }
 
-section {
+.two-opts {
     display: flex;
-    width: 50%;
+    width: 100%;
+}
+
+.one-opt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infocards section {
+    display: flex;
+    width: fit-content;
     padding: 50px;
     border: 3px dotted purple;
     margin: 20px;

@@ -12,11 +12,6 @@ import img6 from '../assets/img/img6.png'
 import InfoCard from '../comp/features/InfoCard'
 
 export default function Home() {
-    // const slides = [
-    //   (<img src={img1} key={1} alt=''/>),
-    //   (<img src={img2} key={2} alt=''/>),
-    //   (<img src={img3} key={3} alt=''/>),
-    // ];
 
     return (
         <div className="home">
@@ -53,25 +48,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {/* <div className='carousel'>
-        <Carousel slides={slides} plugins={[
-     'infinite',
-     'centered',
-    {
-      resolve: autoplayPlugin,
-      options: {
-        interval: 3000,
-      }
-    },
-    {
-      resolve: slidesToShowPlugin,
-      options: {
-        numberOfSlides: 3,
-      },
-    },
-  ]}
-  animationSpeed={500}/>
-      </div> */}
             <div className="wrap">
                 <InfoCard />
             </div>

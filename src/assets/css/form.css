@@ -1,0 +1,23 @@
+form {
+    width: 23%;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.formdata {
+    width: 100%;
+}
+
+form section {
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+}
+
+#in, #out {
+    height: auto;
+    width: auto;
+    margin: revert;
+}
