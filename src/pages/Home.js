@@ -12,7 +12,6 @@ import img6 from '../assets/img/img6.png'
 import InfoCard from '../comp/features/InfoCard'
 
 export default function Home() {
-
     return (
         <div className="home">
             <div className="carousel">
