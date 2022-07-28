@@ -3,7 +3,10 @@ import ReCAPTCHA from 'react-google-recaptcha'
 
 import '../../assets/css/form.css'
 
-export default function FormSchedule() {
+export default function FormSchedule(props) {
+
+    const list = props.flavors;
+
     const [checked, setChecked] = useState([])
 
     const [send, setSend] = useState({
@@ -97,37 +100,13 @@ export default function FormSchedule() {
                     />
                 </section>
                 <section>
-                    <input
-                        type="checkbox"
-                        name="flavors"
-                        value="Strawberry"
-                        onChange={changeArrayHandler}
-                    />
-                    <label for="flavor1">Strawberry</label>
-
-                    <input
-                        type="checkbox"
-                        name="flavors"
-                        value="Root Beer"
-                        onChange={changeArrayHandler}
-                    />
-                    <label for="flavor2">Root Beer</label>
-
-                    <input
-                        type="checkbox"
-                        name="flavors"
-                        value="Marshmellow"
-                        onChange={changeArrayHandler}
-                    />
-                    <label for="flavor3">Marshmellow</label>
-
-                    <input
-                        type="checkbox"
-                        name="flavors"
-                        value="Blueberry"
-                        onChange={changeArrayHandler}
-                    />
-                    <label for="flavor4">Blueberry</label>
+                    {list.map((m) => 
+                        <><input
+                            type="checkbox"
+                            name="flavors"
+                            value={m.name}
+                            onChange={changeArrayHandler} /><label for="flavor1">{m.name}</label></>
+                    )};
                 </section>
                 <span>
                     <ReCAPTCHA
@@ -139,7 +118,6 @@ export default function FormSchedule() {
                     Schedule
                 </button>
             </form>
-            <p>{send.venue}</p>
         </div>
     )
 }

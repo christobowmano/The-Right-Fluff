@@ -1,5 +1,6 @@
 import React from 'react'
 import FormSchedule from '../comp/features/FormSchedule'
+import flavors from '../comp/important/Options'
 
 export default function Contact() {
     return (
@@ -10,7 +11,7 @@ export default function Contact() {
                 make it special for you?
             </p>
 
-            <FormSchedule />
+            <FormSchedule flavors={flavors}/>
 
             <iframe
                 title="Calendar"
