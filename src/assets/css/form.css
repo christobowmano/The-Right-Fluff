@@ -32,6 +32,12 @@ form button {
     background-color: skyblue;
 }
 
+section #checks {
+    display: grid;
+    width: 40%;
+    grid-template-columns: 1fr 1fr;
+}
+
 #in,
 #out {
     height: auto;

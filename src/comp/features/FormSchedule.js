@@ -14,8 +14,10 @@ export default function FormSchedule(props) {
         last_name: '',
         email: '',
         date: '',
+        time: '',
         venue: '',
         address: '',
+        phone: '',
         flavors: checked,
     })
 
@@ -62,12 +64,25 @@ export default function FormSchedule(props) {
                         value={send.email}
                         onChange={changeHandler}
                     />
+                    <input 
+                        type="tel"
+                        placeholder="123-123-4567"
+                        name="phone"
+                        value={send.phone}
+                        onChange={changeHandler}
+                    />
                 </section>
                 <section>
                     <input
                         type="date"
                         name="date"
                         value={send.date}
+                        onChange={changeHandler}
+                    />
+                    <input
+                        type="time"
+                        name="time"
+                        value={send.time}
                         onChange={changeHandler}
                     />
                 </section>
@@ -99,14 +114,14 @@ export default function FormSchedule(props) {
                         onChange={changeHandler}
                     />
                 </section>
-                <section>
+                <section id='checks'>
                     {list.map((m) => 
                         <><input
                             type="checkbox"
                             name="flavors"
                             value={m.name}
                             onChange={changeArrayHandler} /><label for="flavor1">{m.name}</label></>
-                    )};
+                    )}
                 </section>
                 <span>
                     <ReCAPTCHA
