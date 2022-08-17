@@ -75,3 +75,18 @@
         border: none;
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .two-opts {
+        flex-direction: column;
+    }
+
+    .infocards section {
+        border: none;
+        margin: unset;
+    }
+
+    section {
+        padding: 0;
+    }
+}

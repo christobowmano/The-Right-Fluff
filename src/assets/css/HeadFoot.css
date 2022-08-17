@@ -76,3 +76,22 @@ footer img {
 
 footer .background {
 }
+
+@media only screen and (max-width: 480px) {
+    header {
+        height: 271px;
+    }
+
+    header .content {
+        flex-direction: column;
+    }
+
+    header .links {
+        margin: unset;
+        align-self: center;
+    }
+
+    header .content { 
+        width: 100%;
+    }
+}

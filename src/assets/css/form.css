@@ -48,3 +48,9 @@ section #checks {
 form span {
     display: block ruby;
 }
+
+@media only screen and (max-width: 480px) {
+    form {
+        width: 75%;
+    }
+}
