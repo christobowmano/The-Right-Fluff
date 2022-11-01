@@ -3,7 +3,23 @@
     flex-direction: column;
 }
 
-.home .carousel {
+.home .home-header {
+    display: block;
+    margin: 40px 0px;
+}
+
+.home .home-header #logopop {
+    width: 30%;
+    z-index: 10;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.home .home-header .carousel {
     margin: auto;
     width: 100%;
     position: relative;
@@ -13,12 +29,13 @@
     padding: 50px 0;
 }
 
-.home .carousel-track {
+.home .home-header .carousel-track {
     display: flex;
     width: calc(625px * 12);
     animation: scroll 40s linear infinite;
     overflow: hidden;
     border: 5px solid skyblue;
+    filter: blur(2px);
 }
 
 @keyframes scroll {
@@ -30,7 +47,7 @@
     }
 }
 
-.home .slide {
+.home .home-header .slide {
     height: 420px;
     width: 625px;
     display: flex;
@@ -38,7 +55,7 @@
     overflow: hidden;
 }
 
-.home .carousel::before,
+.home .home-header .carousel::before,
 .carousel::after {
     background: linear-gradient(
         to right,
@@ -52,18 +69,18 @@
     z-index: 2;
 }
 
-.home .carousel::before {
+.home .home-header .carousel::before {
     left: 0;
     top: 0;
 }
 
-.home .carousel::after {
+.home .home-header .carousel::after {
     right: 0;
     top: 0;
     transform: rotateZ(180deg);
 }
 
-.home .carousel img {
+.home .home-header .carousel img {
     width: 100%;
     overflow: hidden;
     height: 100%;

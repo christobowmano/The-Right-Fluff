@@ -116,11 +116,14 @@ export default function FormSchedule(props) {
                 </section>
                 <section id='checks'>
                     {list.map((m) => 
-                        <><input
+                        <div className='check-input'>
+                            <input
+                            id='check-button'
                             type="checkbox"
                             name="flavors"
                             value={m.name}
-                            onChange={changeArrayHandler} /><label for="flavor1">{m.name}</label></>
+                            onChange={changeArrayHandler} /><label for="flavor1">{m.name}</label>
+                        </div>
                     )}
                 </section>
                 <span>

@@ -16,6 +16,11 @@ form section {
     align-items: center;
 }
 
+form #checks {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 section input {
     border-radius: 10px;
     border-style: none;
@@ -23,6 +28,15 @@ section input {
     width: 100%;
     margin: 10px;
     padding: 17px;
+}
+
+section .check-input {
+    display: flex;
+    align-items: center;
+}
+
+section #check-button {
+    width: auto;
 }
 
 form button {
