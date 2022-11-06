@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import '../../assets/css/form.css'
 
 export default function FormSchedule(props) {
 
+    let service_id = process.env.REACT_APP_SERVICE_ID;
+    let template_id = process.env.REACT_APP_TEMPLATE;
+    let public_key = process.env.REACT_APP_PUBLIC_KEY;
+
     const list = props.flavors;
+
+    const sent = false;
 
     const [checked, setChecked] = useState([])
 
@@ -16,10 +23,26 @@ export default function FormSchedule(props) {
         date: '',
         time: '',
         venue: '',
+        eventTyp: '',
         address: '',
         phone: '',
         flavors: checked,
     })
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm(service_id, template_id, form.current, public_key)
+          .then((result) => {
+              console.log(result.text);
+              sent = true;
+          }, (error) => {
+              console.log(error.text);
+              sent = false;
+          });
+      };
 
     const changeHandler = (e) => {
         setSend({ [e.target.name]: e.target.value })
@@ -39,7 +62,8 @@ export default function FormSchedule(props) {
 
     return (
         <div className="formdata">
-            <form>
+            {sent ? <p id='sent'>Sent! We will review this data and get to you shortly!</p> : <p></p>}
+            <form ref={form} onSubmit={sendEmail}>
                 <section>
                     <input
                         type="text"
@@ -63,6 +87,7 @@ export default function FormSchedule(props) {
                         name="email"
                         value={send.email}
                         onChange={changeHandler}
+                        required
                     />
                     <input 
                         type="tel"
@@ -75,12 +100,14 @@ export default function FormSchedule(props) {
                 <section>
                     <input
                         type="date"
+                        placeholder="01/01/2023"
                         name="date"
                         value={send.date}
                         onChange={changeHandler}
                     />
                     <input
                         type="time"
+                        placeholder="12:00 PM"
                         name="time"
                         value={send.time}
                         onChange={changeHandler}
@@ -106,6 +133,15 @@ export default function FormSchedule(props) {
                     <label for="out">Outdoor</label>
                 </section>
                 <section>
+                    <select name='eventTyp'>
+                        <option value="not" selected>Choose an option...</option>
+                        <option value="party">Party</option>
+                        <option value="bday">Birthday</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="corporate">Corporate</option>
+                    </select>
+                </section>
+                <section>
                     <input
                         type="text"
                         placeholder="Address"
@@ -128,7 +164,7 @@ export default function FormSchedule(props) {
                 </section>
                 <span>
                     <ReCAPTCHA
-                        sitekey="6LcpiuwUAAAAAPbrfWRoFaWwE8O-0kiQQkSUEamd"
+                        sitekey="6LfqsdIiAAAAAMkT6RAT4D9KOQgnpmPRDi5CjAsq"
                         size="normal"
                     />
                 </span>

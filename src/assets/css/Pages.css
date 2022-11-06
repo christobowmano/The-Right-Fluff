@@ -9,7 +9,7 @@
 }
 
 .home .home-header #logopop {
-    width: 30%;
+    width: 540px;
     z-index: 10;
     position: absolute;
     margin-left: auto;
@@ -17,6 +17,7 @@
     left: 0;
     right: 0;
     text-align: center;
+    animation: load 0.7s linear;
 }
 
 .home .home-header .carousel {
@@ -27,6 +28,7 @@
     place-items: center;
     overflow: hidden;
     padding: 50px 0;
+    animation: load 5s linear;
 }
 
 .home .home-header .carousel-track {
@@ -36,6 +38,15 @@
     overflow: hidden;
     border: 5px solid skyblue;
     filter: blur(2px);
+}
+
+@keyframes load {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 @keyframes scroll {
@@ -112,7 +123,12 @@
     .shop .flavors {
         grid-template-columns: none;
     }
-    .home .carousel::before, .carousel::after {
+    .home .home-header #logopop {
+        width: 350px;
+        top: 400px;
+    }
+    .home .home-header .carousel::before, .carousel::after {
         width: unset;
+        background: unset;
     }
 }

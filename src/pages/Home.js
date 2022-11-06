@@ -1,7 +1,5 @@
 import '../assets/css/Pages.css'
 import React from 'react'
-//import Carousel, {autoplayPlugin, slidesToShowPlugin} from '@brainhubeu/react-carousel'
-import '@brainhubeu/react-carousel/lib/style.css'
 import InfoCard from '../comp/features/InfoCard'
 import logo from '../assets/img/icon.svg'
 
