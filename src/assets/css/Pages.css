@@ -101,6 +101,102 @@
     display: block;
     width: 80%;
     margin: auto;
+    margin-bottom: 30px;
+}
+
+.wrap #events {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.wrap #flavors {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+.wrap #flavors, .wrap #events{
+    list-style: none;
+}
+
+.wrap #events li {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.wrap #events li p{
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.wrap #flavors li p, .wrap #events li p {
+    margin: 40px 0;
+    font-size: 43px;
+    font-weight: bold;
+}
+
+.wrap a {
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: skyblue;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin: 20px;
+}
+
+.wrap a #link {
+    cursor: pointer;
+    padding: unset;
+    border: unset;
+    background-color: unset;
+}
+
+.wrap a:active {
+    background-color: white;
+    border: 2px solid skyblue;
+}
+
+.about {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.about .pic-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about .pic-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.about .pic-bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.about .pic-bottom .img img {
+    width: 950px;
+}
+
+.about .pic-left .img img, .about .pic-right .img img {
+    width: 450px;
+    border: 5px solid skyblue;
+}
+
+.about .pic-left .text, .about .pic-right .text, .about .pic-bottom .text {
+    text-align: left;
+    margin: 0px 40px;
+    font-size: 18px;
 }
 
 .shop .flavors {
@@ -117,9 +213,24 @@
     .wrap {
         width: 90%;
     }
+    .wrap #flavors li p, .wrap #events li p {
+        font-size: 27px;
+    }
+    .about .pic-left {
+        flex-direction: column;
+    }
+    .about .pic-left .img img {
+        width: 545px;
+    }
+    .about .pic-bottom .img img {
+        width: 635px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
+    .wrap #flavors li p, .wrap #events li p {
+        font-size: 17px;
+    }
     .shop .flavors {
         grid-template-columns: none;
     }
@@ -130,5 +241,14 @@
     .home .home-header .carousel::before, .carousel::after {
         width: unset;
         background: unset;
+    }
+    .about .pic-left {
+        flex-direction: column;
+    }
+    .about .pic-left .img img {
+        width: 325px;
+    }
+    .about .pic-bottom .img img {
+        width: 360px;
     }
 }

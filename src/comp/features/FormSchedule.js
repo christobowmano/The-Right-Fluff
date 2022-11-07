@@ -10,23 +10,25 @@ export default function FormSchedule(props) {
     let template_id = process.env.REACT_APP_TEMPLATE;
     let public_key = process.env.REACT_APP_PUBLIC_KEY;
 
-    const list = props.flavors;
+    // const list = props.flavors;
+    const list2 = props.events;
 
     const sent = false;
 
-    const [checked, setChecked] = useState([])
+    // const [checked, setChecked] = useState([])
 
     const [send, setSend] = useState({
         first_name: '',
         last_name: '',
         email: '',
         date: '',
-        time: '',
+        fromTime: '',
+        toTime: '',
         venue: '',
         eventTyp: '',
         address: '',
         phone: '',
-        flavors: checked,
+        message: '',
     })
 
     const form = useRef();
@@ -48,22 +50,23 @@ export default function FormSchedule(props) {
         setSend({ [e.target.name]: e.target.value })
     }
 
-    const changeArrayHandler = (e) => {
-        var newList = checked
-        if (e.target.checked) {
-            newList.push(e.target.value)
-        } else {
-            newList.splice(checked.indexOf(e.target.value), 1)
-        }
+    // const changeArrayHandler = (e) => {
+    //     var newList = checked
+    //     if (e.target.checked) {
+    //         newList.push(e.target.value)
+    //     } else {
+    //         newList.splice(checked.indexOf(e.target.value), 1)
+    //     }
 
-        newList.sort()
-        setChecked(newList)
-    }
+    //     newList.sort()
+    //     setChecked(newList)
+    // }
 
     return (
         <div className="formdata">
             {sent ? <p id='sent'>Sent! We will review this data and get to you shortly!</p> : <p></p>}
             <form ref={form} onSubmit={sendEmail}>
+                <p>Contact Information</p>
                 <section>
                     <input
                         type="text"
@@ -91,12 +94,13 @@ export default function FormSchedule(props) {
                     />
                     <input 
                         type="tel"
-                        placeholder="123-123-4567"
+                        placeholder="Phone #"
                         name="phone"
                         value={send.phone}
                         onChange={changeHandler}
                     />
                 </section>
+                <p>Date & Time</p>
                 <section>
                     <input
                         type="date"
@@ -105,14 +109,26 @@ export default function FormSchedule(props) {
                         value={send.date}
                         onChange={changeHandler}
                     />
+                </section>
+                <section>
+                    <p>From:</p>
                     <input
                         type="time"
                         placeholder="12:00 PM"
                         name="time"
-                        value={send.time}
+                        value={send.fromTime}
+                        onChange={changeHandler}
+                    />
+                    <p>To:</p>
+                    <input
+                        type="time"
+                        placeholder="12:00 PM"
+                        name="time"
+                        value={send.toTime}
                         onChange={changeHandler}
                     />
                 </section>
+                <p>Venue & Party</p>
                 <section style={{ width: 'fit-content' }}>
                     <input
                         type="radio"
@@ -135,10 +151,9 @@ export default function FormSchedule(props) {
                 <section>
                     <select name='eventTyp'>
                         <option value="not" selected>Choose an option...</option>
-                        <option value="party">Party</option>
-                        <option value="bday">Birthday</option>
-                        <option value="wedding">Wedding</option>
-                        <option value="corporate">Corporate</option>
+                        {list2.map((m) => 
+                        <option value={m.shortname}>{m.name}</option>
+                        )}
                     </select>
                 </section>
                 <section>
@@ -150,17 +165,9 @@ export default function FormSchedule(props) {
                         onChange={changeHandler}
                     />
                 </section>
-                <section id='checks'>
-                    {list.map((m) => 
-                        <div className='check-input'>
-                            <input
-                            id='check-button'
-                            type="checkbox"
-                            name="flavors"
-                            value={m.name}
-                            onChange={changeArrayHandler} /><label for="flavor1">{m.name}</label>
-                        </div>
-                    )}
+                <p>Give us an idea on what your event is about! (Optional)</p>
+                <section>
+                    <textarea name='message' onChange={changeHandler}></textarea>
                 </section>
                 <span>
                     <ReCAPTCHA

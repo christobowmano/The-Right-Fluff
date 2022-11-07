@@ -18,9 +18,9 @@ export default function Header() {
                         <li>
                             <Link to={'/about'}>About</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to={'/shop'}>Shop</Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to={'/contact'}>Contact</Link>
                         </li>

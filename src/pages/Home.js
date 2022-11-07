@@ -1,7 +1,11 @@
 import '../assets/css/Pages.css'
 import React from 'react'
-import InfoCard from '../comp/features/InfoCard'
+import {flavors, partyType} from '../comp/important/Options'
 import logo from '../assets/img/icon.svg'
+import { Link } from 'react-router-dom';
+
+const list1 = flavors;
+const list2 = partyType;
 
 export default function Home(props) {
     const imgs = props.images;
@@ -44,7 +48,30 @@ export default function Home(props) {
                 </div>
             </div>
             <div className="wrap">
-                <InfoCard />
+                {/* <InfoCard /> */}
+                <h1>Put a Fresh Spin on your Next Event</h1>
+                <p>Make your next event a little sweeter with fresh live spinning and flavorful treats for your guests.</p>
+                <ul id='events'>
+                    {list2.map((m) =>
+                    <li style={{'backgroundImage': 'url(' + m.banner + ')'}}><p>{m.name}</p></li>
+                    )}
+                </ul>
+                <p>Inside or outdoors, day or night, rain or shine, we provide a fun and memorable highlight to any event. Our cotton candy is spun fresh from pure cane sugar. Certified Organic, Gluten-free, Kosher, Vegan, and free of arfticial colors.</p>
+                <hr/>
+                <h1>A Flavorful Twist on a Traditional Treat</h1>
+                <p>We take those sweet memories of days at the county fair to a new level with gourmet flavors your guests will love. Our favorites include:</p>
+                <ul id='flavors'>
+                    {list1.map((m) =>
+                    <li style={{'backgroundColor': m.basecolor}}><p style={{'color': m.id !== 5 ? 'black' : 'white'}}>{m.name}</p></li>
+                    )}
+                </ul>
+                <p>Interested in a flavor that's not on this list?</p>
+                <Link to={"/contact"}><strong id='link'>Contact us!</strong></Link>
+                <hr/>
+                <h1>Pricing</h1>
+                <p>Book a live spinner for any size event, from backyard barbecues to all-day festivals. Our prices start at $250 for the 1st hour for up to 50 guests. Prices fluctuate with the size and duration of your event and flavor choices.</p>
+                <Link to={"/contact"}>Contact us!</Link>
+                <br/>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 form {
-    width: 23%;
+    width: 40%;
     margin: auto;
     background-color: aliceblue;
     border-radius: 20px;
@@ -32,6 +32,15 @@ form #checks {
 }
 
 section input {
+    border-radius: 10px;
+    border-style: none;
+    background-color: gainsboro;
+    width: 100%;
+    margin: 10px;
+    padding: 17px;
+}
+
+section textarea {
     border-radius: 10px;
     border-style: none;
     background-color: gainsboro;
