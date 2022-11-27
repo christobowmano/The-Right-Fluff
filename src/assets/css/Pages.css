@@ -116,7 +116,8 @@
     align-items: center;
 }
 
-.wrap #flavors, .wrap #events{
+.wrap #flavors,
+.wrap #events {
     list-style: none;
 }
 
@@ -126,12 +127,13 @@
     background-size: auto;
 }
 
-.wrap #events li p{
+.wrap #events li p {
     color: white;
     -webkit-text-stroke: 0.5px black;
 }
 
-.wrap #flavors li p, .wrap #events li p {
+.wrap #flavors li p,
+.wrap #events li p {
     margin: 40px 0;
     font-size: 43px;
     font-weight: bold;
@@ -188,12 +190,15 @@
     width: 950px;
 }
 
-.about .pic-left .img img, .about .pic-right .img img {
+.about .pic-left .img img,
+.about .pic-right .img img {
     width: 450px;
     border: 5px solid skyblue;
 }
 
-.about .pic-left .text, .about .pic-right .text, .about .pic-bottom .text {
+.about .pic-left .text,
+.about .pic-right .text,
+.about .pic-bottom .text {
     text-align: left;
     margin: 0px 40px;
     font-size: 18px;
@@ -213,7 +218,8 @@
     .wrap {
         width: 90%;
     }
-    .wrap #flavors li p, .wrap #events li p {
+    .wrap #flavors li p,
+    .wrap #events li p {
         font-size: 27px;
     }
     .about .pic-left {
@@ -228,8 +234,15 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .wrap #flavors li p, .wrap #events li p {
-        font-size: 17px;
+    .wrap #flavors li p,
+    .wrap #events li p {
+        font-size: 30px;
+    }
+    .wrap #events {
+        grid-template-columns: auto;
+    }
+    .wrap #flavors {
+        grid-template-columns: auto auto;
     }
     .shop .flavors {
         grid-template-columns: none;
@@ -238,7 +251,8 @@
         width: 350px;
         top: 400px;
     }
-    .home .home-header .carousel::before, .carousel::after {
+    .home .home-header .carousel::before,
+    .carousel::after {
         width: unset;
         background: unset;
     }
